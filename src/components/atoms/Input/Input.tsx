@@ -27,7 +27,7 @@ const Input = ({
         value={value}
         onChange={onChange}
         name={name}
-        className="w-full bg-inherit h-full flex-1 placeholder-gray-400/65 outline-none"
+        className="w-full bg-inherit h-full flex-1 text-white placeholder-gray-400/65 outline-none"
         placeholder={placeholder}
       />
       {icon && (
