@@ -30,10 +30,12 @@ export const useGetTicket = () => {
     mutationFn: getTicket,
     onSuccess: () => {
       resetForm();
-      toast.success("Please enter OTP to continue");
+      toast.success(
+        "Ticket created successfully. Check your email for the details.",
+      );
     },
     onError: (error: ApiErrorResponse) => {
-      console.log("error logging in", error);
+      console.log("error applying for ticket", error);
       promiseErrorFunction(error);
     },
   });

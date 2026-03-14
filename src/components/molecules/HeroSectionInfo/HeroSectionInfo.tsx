@@ -6,7 +6,7 @@ import LocationContent from "@/components/atoms/LocationContent/LocationContent"
 
 const HeroSectionInfo = () => {
   return (
-    <div className="max-w-[703.69px] md:min-w-100 min-w-[#300px] space-y-16">
+    <div className="max-w-[703.69px] md:min-w-100 min-w-[#300px] sm:space-y-16 space-y-10">
       <div className="max-w-[659.81px] w-full max-h-[193.57px] bg-linear-to-br from-[#1A0304] to-[#050505]">
         <Image
           src="/assets/images/bred.svg"
