@@ -45,7 +45,6 @@ export const useGetTicket = () => {
   const { mutate, isPending } = useMutation({
     mutationFn: getTicket,
     onSuccess: (data) => {
-      console.log("data", data);
       resetForm();
       toast.success(
         "Ticket created successfully. Check your email for the details.",
