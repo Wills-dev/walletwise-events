@@ -1,6 +1,8 @@
+import React from "react";
+
 const CircleGradient = () => {
   return (
-    <div className="max-w-218.25 w-full h-201.5 -top-58.75 -left-87.25 rotate-[-132.34deg] opacity-100 absolute  rounded-full bg-[#DA0C0B17] shadow-[0_0_30px_50px_rgba(218,12,11,0.08)]" />
+    <div className="sm:max-w-[440.32px] max-w-60 w-full sm:h-106 h-52   opacity-80  rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.6)_40%,rgba(255,255,255,0.2)_65%,transparent_100%)]  shadow-[0_0_40px_60px_rgba(255,255,255,0.15)]" />
   );
 };
 

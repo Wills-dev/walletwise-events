@@ -12,6 +12,8 @@ export const useGetTicket = () => {
     email: "",
     phoneNumber: "",
   });
+  const [ticketType, setticketType] = useState("");
+  const [quantity, setQuantity] = useState(1);
 
   const resetForm = () => {
     setUserInfo({
@@ -19,11 +21,23 @@ export const useGetTicket = () => {
       email: "",
       phoneNumber: "",
     });
+    setQuantity(1);
+    setticketType("");
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setUserInfo((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const increase = () => {
+    setQuantity((prev) => prev + 1);
+  };
+
+  const descrease = () => {
+    if (quantity > 1) {
+      setQuantity((prev) => prev - 1);
+    }
   };
 
   const { mutate, isPending } = useMutation({
@@ -51,9 +65,23 @@ export const useGetTicket = () => {
       return toast.error("Email is required");
     } else if (!phoneNumber) {
       return toast.error("Phone number is required");
+    } else if (quantity < 1) {
+      return toast.error("Quantity must be 1 and above");
+    } else if (!ticketType) {
+      return toast.error("Please select ticket type");
     }
-    mutate(userInfo);
+    mutate({ fullName, email, phoneNumber, quantity, ticketType });
   };
 
-  return { handleChange, userInfo, handleSubmit, isPending };
+  return {
+    handleChange,
+    userInfo,
+    handleSubmit,
+    isPending,
+    increase,
+    descrease,
+    quantity,
+    ticketType,
+    setticketType,
+  };
 };

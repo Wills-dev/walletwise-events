@@ -1,12 +1,9 @@
 import { ReactNode } from "react";
 
-import CircleGradient from "@/components/atoms/CircleGradient/CircleGradient";
-
 const MainLayout = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="min-h-screen h-full relative bg-linear-to-br from-[#1A0304] to-[#050505] py-6">
-      <CircleGradient />
-      <div className=" z-10 ">{children}</div>
+    <div className="min-h-screen h-full relative w-full bg-[linear-gradient(180deg,#615853_0%,#6B615A_21.74%,#857772_37.98%,#7E706B_75%,#1E1C18_100%)]">
+      {children}
     </div>
   );
 };

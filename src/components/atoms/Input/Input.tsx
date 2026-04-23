@@ -20,26 +20,15 @@ const Input = ({
   name,
 }: InputProps) => {
   return (
-    <div className="relative flex items-center backdrop-blur-2xl px-[14.64px] pt-[13.73px] pb-[12.81px] rounded-[9.15px] border border-[#252525] transition-all focus-within:border-[#CF0000] duration-300 h-[43.93px] shadow-[0px_0.92px_1.83px_0px_#0000000D]">
-      <input
-        style={{ fontSize: "16px" }}
-        type={type}
-        value={value}
-        onChange={onChange}
-        name={name}
-        className="w-full bg-inherit h-full flex-1 text-gray-400 placeholder-gray-400/65 outline-none"
-        placeholder={placeholder}
-      />
-      {icon && (
-        <Image
-          src={icon}
-          alt="preview"
-          width={18.3}
-          height={18.3}
-          className="object-contain"
-        />
-      )}
-    </div>
+    <input
+      style={{ fontSize: "16px" }}
+      type={type}
+      value={value}
+      onChange={onChange}
+      name={name}
+      className="border-b border-[#706860] focus:border-[#755e48] transition-all duration-300 w-full outline-none placeholder:text-white/40 placeholder:font-light text-white/70 h-9.75 text-[14px] md:text-[15px] leading-none tracking-[0.4px] md:tracking-[0.6px]"
+      placeholder={placeholder}
+    />
   );
 };
 

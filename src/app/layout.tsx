@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 
-import { Inter, Montserrat } from "next/font/google";
+import {
+  Inter,
+  Seaweed_Script,
+  Cinzel_Decorative,
+  Cinzel,
+  Playfair_Display,
+} from "next/font/google";
 import "./globals.css";
 
 import { Toaster } from "@/components/ui/sonner";
@@ -11,9 +17,25 @@ export const inter = Inter({
   variable: "--font-inter",
 });
 
-export const montserrat = Montserrat({
+export const seaWeedScript = Seaweed_Script({
   subsets: ["latin"],
-  variable: "--font-montserrat",
+  variable: "--font-seaweed_script",
+  weight: "400",
+});
+export const cinzelDecorative = Cinzel_Decorative({
+  subsets: ["latin"],
+  variable: "--font-cinzel_decorative",
+  weight: ["400", "700", "900"],
+});
+export const cinzel = Cinzel({
+  subsets: ["latin"],
+  variable: "--font-cinzel",
+  weight: ["400", "700", "500", "600", "800", "900"],
+});
+export const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair_display",
+  weight: ["400", "700", "500", "600", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -64,7 +86,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <QueryProvider>
-        <body className={`${inter.variable} ${montserrat.variable}`}>
+        <body
+          className={`${inter.variable} ${seaWeedScript.variable} ${cinzelDecorative.variable} ${cinzel.variable} ${playfairDisplay.variable}`}
+        >
           {children}
           <Toaster />
         </body>

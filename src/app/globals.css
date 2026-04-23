@@ -120,6 +120,22 @@ body {
   font-family: var(--font-inter), sans-serif;
 }
 
+.font-seaweed_script {
+  font-family: var(--font-seaweed_script), sans-serif;
+}
+
+.font-cinzel_decorative {
+  font-family: var(--font-cinzel_decorative), sans-serif;
+}
+
+.font-cinzel {
+  font-family: var(--font-cinzel), sans-serif;
+}
+
+.font-Playfair_Display {
+  font-family: var(--font-playfair_display), sans-serif;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

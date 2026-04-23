@@ -1,11 +1,11 @@
-import HeroSectionInfo from "@/components/molecules/HeroSectionInfo/HeroSectionInfo";
-import TickeetForm from "@/components/molecules/TickeetForm/TickeetForm";
+import LowerHero from "@/components/molecules/LowerHero/LowerHero";
+import UpperHero from "@/components/molecules/UpperHero/UpperHero";
 
 const HeroSection = () => {
   return (
-    <section className="flex justify-center flex-wrap w-full gap-16 py-28 max-sm:pt-16 z-10">
-      <HeroSectionInfo />
-      <TickeetForm />
+    <section className="w-full pt-28 pb-10 max-sm:pt-16 z-10">
+      <UpperHero />
+      <LowerHero />
     </section>
   );
 };
