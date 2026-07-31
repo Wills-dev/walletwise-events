@@ -1,6 +1,7 @@
 import Container from "@/components/atom/Container/Container";
 import InfoRow from "@/components/atom/InfoRow/InfoRow";
 
+import { formatEventDate } from "@/lib/helpers/formatEventDate";
 import { EventType } from "@/lib/types";
 
 const EventInfoMain = ({ event }: { event: EventType }) => {
@@ -31,7 +32,10 @@ const EventInfoMain = ({ event }: { event: EventType }) => {
                 />
                 <InfoRow
                   iconUrl="/assets/icons/MapPin.svg"
-                  desc={`${event?.computed?.formattedDate} ${event?.time ? `- ${event?.time}` : ""}`}
+                  desc={`${formatEventDate(
+                    event.eventId,
+                    event.computed.formattedDate,
+                  )} ${event?.time ? `- ${event?.time}` : ""}`}
                 />
               </div>
             </div>
