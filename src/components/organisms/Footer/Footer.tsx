@@ -90,14 +90,14 @@ const Footer = ({
             </p>
             <div className="flex items-center gap-2">
               <Link
-                href="/"
+                href="/privacy-policy"
                 className="text-[#737373] text-xs font-medium hover:text-[#5A27CC] transition-colors duration-300"
               >
                 Privacy policy
               </Link>
               <div className="w-1 h-1 rounded-full bg-black" />
               <Link
-                href="/"
+                href="/terms-of-use"
                 className="text-[#737373] text-xs font-medium hover:text-[#5A27CC] transition-colors duration-300"
               >
                 Terms of use
