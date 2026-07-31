@@ -1,4 +1,5 @@
 import InfoColumn from "@/components/atom/InfoColumn/InfoColumn";
+import { formatEventDate } from "@/lib/helpers/formatEventDate";
 import { numberWithCommas } from "@/lib/helpers/formatNumber";
 
 import { EventType } from "@/lib/types";
@@ -20,7 +21,10 @@ const EventInfo = ({ event }: { event: EventType }) => {
         <InfoColumn
           Icon={Calendar}
           label="Date"
-          value={event?.computed?.formattedDate}
+          value={formatEventDate(
+            event.eventId,
+            event.computed.formattedDate,
+          )}
         />
         <InfoColumn Icon={Timer} label="Time" value={timeFormate} />
         <InfoColumn Icon={MapPin} label="Venue" value={event?.address} />

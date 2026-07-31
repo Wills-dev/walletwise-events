@@ -1,6 +1,7 @@
 import EventCard from "@/components/atom/EventCard/EventCard";
 import EventCardSkeleton from "@/components/atom/skeleton/EventCardSkeleton";
 
+import { formatEventDate } from "@/lib/helpers/formatEventDate";
 import { EventType } from "@/lib/types";
 
 const EventWrapper = ({
@@ -29,7 +30,10 @@ const EventWrapper = ({
                 imgUrl={item?.imageUrl}
                 category={item?.category}
                 amount={item?.computed.lowestTicketPrice}
-                date={item?.computed.formattedDate}
+                date={formatEventDate(
+                  item.eventId,
+                  item.computed.formattedDate,
+                )}
                 eventName={item?.title}
                 location={item?.address}
                 link={`/event/info/${item.eventId}`}
