@@ -60,4 +60,21 @@ export interface EventType {
   endTime: string | null;
   computed: EventSummary;
   ticketTypes: EventTicketType[];
+  gallery?: EventImage[];
+  galleryImages?: EventImage[];
+  images?: EventImage[];
+  eventImages?: EventImage[];
+  ticketsSold?: number;
+  crowdRating?: number;
+  expectedSongs?: number;
+  attendance?: number;
 }
+
+export type EventImage =
+  | string
+  | {
+      url?: string;
+      imageUrl?: string;
+      secure_url?: string;
+      alt?: string;
+    };
