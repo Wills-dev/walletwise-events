@@ -39,6 +39,15 @@ const BookTicket = ({
     Table8: "Table of 8",
     Table10: "Table of 10",
   };
+  const getTicketName = (ticket: EventTicketType) =>
+    ticket.type || seatAvailable[ticket.name] || ticket.name;
+
+  const selectedTicketDetails = ticketTypes?.find(
+    (ticket) => ticket.name === selectedTicket?.ticketType,
+  );
+  const selectedTicketName = selectedTicketDetails
+    ? getTicketName(selectedTicketDetails)
+    : selectedTicket?.ticketType;
 
   return (
     <form
@@ -52,17 +61,22 @@ const BookTicket = ({
         </p>
       </div>
       <div className="space-y-4 w-full">
-        {ticketTypes?.map((ticket) => (
-          <TicketCard
-            key={ticket?.name}
-            type={seatAvailable[ticket?.name] || ticket?.name}
-            amount={ticket?.price}
-            seatsLeft={ticket?.quantity}
-            quantitySelected={getQuantity(ticket?.name)}
-            increase={() => increase(ticket?.name, ticket?.price)}
-            descrease={() => decrease(ticket?.name)}
-          />
-        ))}
+        {ticketTypes?.map((ticket) => {
+          const ticketName = getTicketName(ticket);
+          const seatsLeft = ticket.quantity ?? ticket.capacity ?? 0;
+
+          return (
+            <TicketCard
+              key={ticket.name}
+              type={ticketName}
+              amount={ticket.price}
+              seatsLeft={seatsLeft}
+              quantitySelected={getQuantity(ticket.name)}
+              increase={() => increase(ticket.name, ticket.price)}
+              descrease={() => decrease(ticket.name)}
+            />
+          );
+        })}
       </div>
       <div className="space-y-4">
         <div className="space-y-6">
@@ -107,7 +121,7 @@ const BookTicket = ({
               ) : (
                 <div className="flex justify-between">
                   <p>
-                    {selectedTicket.ticketType} × {selectedTicket.quantity}
+                    {selectedTicketName} × {selectedTicket.quantity}
                   </p>
 
                   <p>

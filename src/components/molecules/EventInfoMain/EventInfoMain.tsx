@@ -2,9 +2,16 @@ import Container from "@/components/atom/Container/Container";
 import InfoRow from "@/components/atom/InfoRow/InfoRow";
 
 import { formatEventDate } from "@/lib/helpers/formatEventDate";
+import { formatEventTime } from "@/lib/helpers/formatEventTime";
 import { EventType } from "@/lib/types";
 
 const EventInfoMain = ({ event }: { event: EventType }) => {
+  const formattedTime = formatEventTime(
+    event.time,
+    event.endTime,
+    event.computed.formattedTime,
+  );
+
   return (
     <div
       className="w-full h-141"
@@ -35,7 +42,7 @@ const EventInfoMain = ({ event }: { event: EventType }) => {
                   desc={`${formatEventDate(
                     event.eventId,
                     event.computed.formattedDate,
-                  )} ${event?.time ? `- ${event?.time}` : ""}`}
+                  )}${formattedTime ? ` - ${formattedTime}` : ""}`}
                 />
               </div>
             </div>

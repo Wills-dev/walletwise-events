@@ -33,7 +33,7 @@ const PastEvents = ({
                 )}
                 eventName={item?.title}
                 location={item?.address}
-                link={`/event/info/${item.eventId}`}
+                link={`/event/past/${item.eventId}`}
               />
             ))}
           </>

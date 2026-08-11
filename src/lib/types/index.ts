@@ -29,9 +29,11 @@ export interface fetchDataProps {
 
 export interface EventTicketType {
   name: string;
+  type?: string;
   price: number;
-  quantity: number;
-  discountPrice: number;
+  quantity?: number;
+  capacity?: number;
+  discountPrice?: number;
 }
 
 export interface EventSummary {
@@ -60,4 +62,21 @@ export interface EventType {
   endTime: string | null;
   computed: EventSummary;
   ticketTypes: EventTicketType[];
+  gallery?: EventImage[];
+  galleryImages?: EventImage[];
+  images?: EventImage[];
+  eventImages?: EventImage[];
+  ticketsSold?: number;
+  crowdRating?: number;
+  expectedSongs?: number;
+  attendance?: number;
 }
+
+export type EventImage =
+  | string
+  | {
+      url?: string;
+      imageUrl?: string;
+      secure_url?: string;
+      alt?: string;
+    };
