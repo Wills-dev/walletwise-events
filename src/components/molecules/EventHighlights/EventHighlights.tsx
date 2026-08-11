@@ -1,7 +1,7 @@
 import SummaryCard from "@/components/atom/SummaryCard/SummaryCard";
 import EventInfo from "../EventInfo/EventInfo";
 // import EventLocation from "../EventLocation/EventLocation";
-import EventLineUp from "../EventLineUp/EventLineUp";
+// import EventLineUp from "../EventLineUp/EventLineUp";
 
 import { EventType } from "@/lib/types";
 import { numberWithCommas } from "@/lib/helpers/formatNumber";
@@ -43,7 +43,7 @@ const EventHighlights = ({ event }: { event: EventType }) => {
           <EventInfo event={event} />
           {/* <EventLocation location={event?.address} /> */}
         </div>
-        <EventLineUp id={event?.eventId} />
+        {/* <EventLineUp id={event?.eventId} /> */}
       </div>
     </div>
   );

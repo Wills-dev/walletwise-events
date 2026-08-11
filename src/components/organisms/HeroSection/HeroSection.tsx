@@ -20,14 +20,14 @@ const HeroSection = () => {
               <div className="flex w-full items-end sm:py-10 sm:px-8 p-6 h-full">
                 <div className="max-w-107.25 w-full text-white space-y-2">
                   <div className="flex items-center gap-2  font-semibold text-sm">
-                    <span>NEXT UP</span> • <span>FRI 31ST July 2026</span>
+                    <span>NEXT UP</span> • <span>FRI 4TH SEPT 2026</span>
                   </div>
                   <h1 className="sm:text-[48px] text-[35px] leading-[100%] tracking-normal font-extrabold uppercase">
-                    Peruzzi <br />
-                    Live in Abuja
+                    SPLASH & <br />
+                    CHILL FEST
                   </h1>
                   <Link
-                    href={"/event/info/63b36981-b5b5-4b41-8b4f-c99f811b4b39"}
+                    href={"/event/info/dffb909a-6110-42e2-8d7f-c1dd15904e1a"}
                     className="flex items-center gap-2 bg-white border border-[#E5E5E5] p-3 rounded-[10px] text-[#262626] w-fit"
                   >
                     <span className="text-xs">View details</span>

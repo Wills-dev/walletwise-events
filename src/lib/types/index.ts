@@ -29,9 +29,11 @@ export interface fetchDataProps {
 
 export interface EventTicketType {
   name: string;
+  type?: string;
   price: number;
-  quantity: number;
-  discountPrice: number;
+  quantity?: number;
+  capacity?: number;
+  discountPrice?: number;
 }
 
 export interface EventSummary {
